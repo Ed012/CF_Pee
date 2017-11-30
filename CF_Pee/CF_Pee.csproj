@@ -200,6 +200,7 @@
     <Compile Include="Controllers\CyclesAPIController.cs" />
     <Compile Include="Controllers\CyclesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NotesController.cs" />
     <Compile Include="Controllers\StudentsAPIController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Controllers\StudentsODataController.cs" />
@@ -224,10 +225,15 @@
     <Compile Include="Migrations\201711301547490_AddTeacher.Designer.cs">
       <DependentUpon>201711301547490_AddTeacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711301736593_AddNote.cs" />
+    <Compile Include="Migrations\201711301736593_AddNote.Designer.cs">
+      <DependentUpon>201711301736593_AddNote.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Cycle.cs" />
     <Compile Include="Models\MyStudentsContext.cs" />
+    <Compile Include="Models\Notes.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\Teacher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -307,6 +313,11 @@
     <Content Include="Views\Teachers\Details.cshtml" />
     <Content Include="Views\Teachers\Edit.cshtml" />
     <Content Include="Views\Teachers\Index.cshtml" />
+    <Content Include="Views\Notes\Create.cshtml" />
+    <Content Include="Views\Notes\Delete.cshtml" />
+    <Content Include="Views\Notes\Details.cshtml" />
+    <Content Include="Views\Notes\Edit.cshtml" />
+    <Content Include="Views\Notes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -336,6 +347,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711301547490_AddTeacher.resx">
       <DependentUpon>201711301547490_AddTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711301736593_AddNote.resx">
+      <DependentUpon>201711301736593_AddNote.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

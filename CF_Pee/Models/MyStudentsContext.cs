@@ -26,5 +26,7 @@ namespace CF_Pee.Models
         public System.Data.Entity.DbSet<CF_Pee.Models.Course> Courses { get; set; }
 
         public System.Data.Entity.DbSet<CF_Pee.Models.Teacher> Teachers { get; set; }
+
+        public System.Data.Entity.DbSet<CF_Pee.Models.Notes> Notes { get; set; }
     }
 }
