@@ -21,5 +21,19 @@ namespace UnitTestProject1
             //Assert	
             Assert.IsFalse(result);
         }
+
+        [TestMethod]
+        public void Last_Test_Note()
+        {
+            //Arrange 
+            var service = new NoteService();
+            var note = new Notes() { Last_Test = -3 };
+
+            //Act
+            var result = service.IsValid(note);
+
+            //Assert	
+            Assert.IsFalse(result);
+        }
     }
 }

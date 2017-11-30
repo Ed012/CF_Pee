@@ -19,6 +19,12 @@ namespace CF_Pee.Services
                 Errores.Add("Se requiere una nota mayor a 0 ");
                 valid = false;
             }
+
+            if (note.Last_Test < 0)
+            {
+                Errores.Add("Se requiere una nota mayor a 0 ");
+                valid = false;
+            }
             return valid;
         }
     }
