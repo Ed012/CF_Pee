@@ -21,5 +21,19 @@ namespace UnitTestProject1
             //Assert	
             Assert.IsFalse(result);
         }
+
+        [TestMethod]
+        public void IsEmpty_TeacherDNI()
+        {
+            //Arrange 
+            var service = new TeacherDNIService();
+            var teacher = new Teacher() { DNI = -3 };
+
+            //Act
+            var result = service.IsValid(teacher);
+
+            //Assert	
+            Assert.IsFalse(result);
+        }
     }
 }

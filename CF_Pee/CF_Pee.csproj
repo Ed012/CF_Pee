@@ -233,6 +233,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\StudentCountService.cs" />
     <Compile Include="Services\StudentEmptyService.cs" />
+    <Compile Include="Services\TeacherDNIService.cs" />
     <Compile Include="Services\TeacherIsEmptyService.cs" />
   </ItemGroup>
   <ItemGroup>
