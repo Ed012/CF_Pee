@@ -6,7 +6,7 @@ using System.Web;
 
 namespace CF_Pee.Services
 {
-    public class StudentService
+    public class StudentEmptyService
     {
         public List<string> Errores { get; private set; }
         public bool IsValid(Student student)

@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using CF_Pee.Models;
+using System.Web.Http.OData;
 
 namespace CF_Pee.Controllers
 {
@@ -17,9 +18,10 @@ namespace CF_Pee.Controllers
         private MyStudentsContext db = new MyStudentsContext();
 
         // GET: api/StudentsAPI
+        [EnableQuery]
         public IQueryable<Student> GetStudents()
         {
-            return db.Students;
+            return db.Students.AsQueryable();
         }
 
         // GET: api/StudentsAPI/5

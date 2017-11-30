@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.OData.Builder;
+using System.Web.Http.OData.Extensions;
+using CF_Pee.Models;
 
 namespace CF_Pee
 {
@@ -10,6 +13,7 @@ namespace CF_Pee
         public static void Register(HttpConfiguration config)
         {
             // Configuración y servicios de API web
+            config.AddODataQueryFilter();
 
             // Rutas de API web
             config.MapHttpAttributeRoutes();

@@ -11,7 +11,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void IsValid_StudentNameEMpty()
         {
-            var service = new StudentService();
+            var service = new StudentEmptyService();
             var student = new Student() { Name = string.Empty };
 
             var result = service.IsValid(student);
