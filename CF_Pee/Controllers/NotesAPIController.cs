@@ -13,45 +13,45 @@ using System.Web.Http.OData;
 
 namespace CF_Pee.Controllers
 {
-    public class CyclesAPIController : ApiController
+    public class NotesAPIController : ApiController
     {
         private MyStudentsContext db = new MyStudentsContext();
 
-        // GET: api/CyclesAPI
+        // GET: api/NotesAPI
         [EnableQuery]
-        public IQueryable<Cycle> GetCycles()
+        public IQueryable<Notes> GetNotes()
         {
-            return db.Cycles.AsQueryable();
+            return db.Notes.AsQueryable();
         }
 
-        // GET: api/CyclesAPI/5
-        [ResponseType(typeof(Cycle))]
-        public IHttpActionResult GetCycle(int id)
+        // GET: api/NotesAPI/5
+        [ResponseType(typeof(Notes))]
+        public IHttpActionResult GetNotes(int id)
         {
-            Cycle cycle = db.Cycles.Find(id);
-            if (cycle == null)
+            Notes notes = db.Notes.Find(id);
+            if (notes == null)
             {
                 return NotFound();
             }
 
-            return Ok(cycle);
+            return Ok(notes);
         }
 
-        // PUT: api/CyclesAPI/5
+        // PUT: api/NotesAPI/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutCycle(int id, Cycle cycle)
+        public IHttpActionResult PutNotes(int id, Notes notes)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != cycle.IdCycle)
+            if (id != notes.IdNote)
             {
                 return BadRequest();
             }
 
-            db.Entry(cycle).State = EntityState.Modified;
+            db.Entry(notes).State = EntityState.Modified;
 
             try
             {
@@ -59,7 +59,7 @@ namespace CF_Pee.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CycleExists(id))
+                if (!NotesExists(id))
                 {
                     return NotFound();
                 }
@@ -72,35 +72,35 @@ namespace CF_Pee.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/CyclesAPI
-        [ResponseType(typeof(Cycle))]
-        public IHttpActionResult PostCycle(Cycle cycle)
+        // POST: api/NotesAPI
+        [ResponseType(typeof(Notes))]
+        public IHttpActionResult PostNotes(Notes notes)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Cycles.Add(cycle);
+            db.Notes.Add(notes);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = cycle.IdCycle }, cycle);
+            return CreatedAtRoute("DefaultApi", new { id = notes.IdNote }, notes);
         }
 
-        // DELETE: api/CyclesAPI/5
-        [ResponseType(typeof(Cycle))]
-        public IHttpActionResult DeleteCycle(int id)
+        // DELETE: api/NotesAPI/5
+        [ResponseType(typeof(Notes))]
+        public IHttpActionResult DeleteNotes(int id)
         {
-            Cycle cycle = db.Cycles.Find(id);
-            if (cycle == null)
+            Notes notes = db.Notes.Find(id);
+            if (notes == null)
             {
                 return NotFound();
             }
 
-            db.Cycles.Remove(cycle);
+            db.Notes.Remove(notes);
             db.SaveChanges();
 
-            return Ok(cycle);
+            return Ok(notes);
         }
 
         protected override void Dispose(bool disposing)
@@ -112,9 +112,9 @@ namespace CF_Pee.Controllers
             base.Dispose(disposing);
         }
 
-        private bool CycleExists(int id)
+        private bool NotesExists(int id)
         {
-            return db.Cycles.Count(e => e.IdCycle == id) > 0;
+            return db.Notes.Count(e => e.IdNote == id) > 0;
         }
     }
 }

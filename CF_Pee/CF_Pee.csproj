@@ -200,10 +200,12 @@
     <Compile Include="Controllers\CyclesAPIController.cs" />
     <Compile Include="Controllers\CyclesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NotesAPIController.cs" />
     <Compile Include="Controllers\NotesController.cs" />
     <Compile Include="Controllers\StudentsAPIController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Controllers\StudentsODataController.cs" />
+    <Compile Include="Controllers\TeachersAPIController.cs" />
     <Compile Include="Controllers\TeachersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">

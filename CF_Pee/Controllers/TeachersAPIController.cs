@@ -13,45 +13,45 @@ using System.Web.Http.OData;
 
 namespace CF_Pee.Controllers
 {
-    public class CyclesAPIController : ApiController
+    public class TeachersAPIController : ApiController
     {
         private MyStudentsContext db = new MyStudentsContext();
 
-        // GET: api/CyclesAPI
+        // GET: api/TeachersAPI
         [EnableQuery]
-        public IQueryable<Cycle> GetCycles()
+        public IQueryable<Teacher> GetTeachers()
         {
-            return db.Cycles.AsQueryable();
+            return db.Teachers.AsQueryable();
         }
 
-        // GET: api/CyclesAPI/5
-        [ResponseType(typeof(Cycle))]
-        public IHttpActionResult GetCycle(int id)
+        // GET: api/TeachersAPI/5
+        [ResponseType(typeof(Teacher))]
+        public IHttpActionResult GetTeacher(int id)
         {
-            Cycle cycle = db.Cycles.Find(id);
-            if (cycle == null)
+            Teacher teacher = db.Teachers.Find(id);
+            if (teacher == null)
             {
                 return NotFound();
             }
 
-            return Ok(cycle);
+            return Ok(teacher);
         }
 
-        // PUT: api/CyclesAPI/5
+        // PUT: api/TeachersAPI/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutCycle(int id, Cycle cycle)
+        public IHttpActionResult PutTeacher(int id, Teacher teacher)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != cycle.IdCycle)
+            if (id != teacher.IdTeacher)
             {
                 return BadRequest();
             }
 
-            db.Entry(cycle).State = EntityState.Modified;
+            db.Entry(teacher).State = EntityState.Modified;
 
             try
             {
@@ -59,7 +59,7 @@ namespace CF_Pee.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CycleExists(id))
+                if (!TeacherExists(id))
                 {
                     return NotFound();
                 }
@@ -72,35 +72,35 @@ namespace CF_Pee.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/CyclesAPI
-        [ResponseType(typeof(Cycle))]
-        public IHttpActionResult PostCycle(Cycle cycle)
+        // POST: api/TeachersAPI
+        [ResponseType(typeof(Teacher))]
+        public IHttpActionResult PostTeacher(Teacher teacher)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Cycles.Add(cycle);
+            db.Teachers.Add(teacher);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = cycle.IdCycle }, cycle);
+            return CreatedAtRoute("DefaultApi", new { id = teacher.IdTeacher }, teacher);
         }
 
-        // DELETE: api/CyclesAPI/5
-        [ResponseType(typeof(Cycle))]
-        public IHttpActionResult DeleteCycle(int id)
+        // DELETE: api/TeachersAPI/5
+        [ResponseType(typeof(Teacher))]
+        public IHttpActionResult DeleteTeacher(int id)
         {
-            Cycle cycle = db.Cycles.Find(id);
-            if (cycle == null)
+            Teacher teacher = db.Teachers.Find(id);
+            if (teacher == null)
             {
                 return NotFound();
             }
 
-            db.Cycles.Remove(cycle);
+            db.Teachers.Remove(teacher);
             db.SaveChanges();
 
-            return Ok(cycle);
+            return Ok(teacher);
         }
 
         protected override void Dispose(bool disposing)
@@ -112,9 +112,9 @@ namespace CF_Pee.Controllers
             base.Dispose(disposing);
         }
 
-        private bool CycleExists(int id)
+        private bool TeacherExists(int id)
         {
-            return db.Cycles.Count(e => e.IdCycle == id) > 0;
+            return db.Teachers.Count(e => e.IdTeacher == id) > 0;
         }
     }
 }
