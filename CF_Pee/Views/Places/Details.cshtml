@@ -1,13 +1,13 @@
-﻿@model CF_Pee.Models.Cycle
+﻿@model CF_Pee.Models.Place
 
 @{
     ViewBag.Title = "Details";
 }
 
-<h2>Detalle del Ciclo</h2>
+<h2>Details</h2>
 
 <div>
-    <h4>Cycle</h4>
+    <h4>Place</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -19,16 +19,16 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Period)
+            @Html.DisplayNameFor(model => model.Address)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Period)
+            @Html.DisplayFor(model => model.Address)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IdCycle }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdPlace }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

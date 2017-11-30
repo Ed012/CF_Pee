@@ -202,6 +202,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NotesAPIController.cs" />
     <Compile Include="Controllers\NotesController.cs" />
+    <Compile Include="Controllers\PlacesAPIController.cs" />
+    <Compile Include="Controllers\PlacesController.cs" />
     <Compile Include="Controllers\StudentsAPIController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Controllers\StudentsODataController.cs" />
@@ -231,11 +233,16 @@
     <Compile Include="Migrations\201711301736593_AddNote.Designer.cs">
       <DependentUpon>201711301736593_AddNote.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711302120360_AddPlace.cs" />
+    <Compile Include="Migrations\201711302120360_AddPlace.Designer.cs">
+      <DependentUpon>201711302120360_AddPlace.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Cycle.cs" />
     <Compile Include="Models\MyStudentsContext.cs" />
     <Compile Include="Models\Notes.cs" />
+    <Compile Include="Models\Place.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\Teacher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -321,6 +328,11 @@
     <Content Include="Views\Notes\Details.cshtml" />
     <Content Include="Views\Notes\Edit.cshtml" />
     <Content Include="Views\Notes\Index.cshtml" />
+    <Content Include="Views\Places\Create.cshtml" />
+    <Content Include="Views\Places\Delete.cshtml" />
+    <Content Include="Views\Places\Details.cshtml" />
+    <Content Include="Views\Places\Edit.cshtml" />
+    <Content Include="Views\Places\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -353,6 +365,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711301736593_AddNote.resx">
       <DependentUpon>201711301736593_AddNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711302120360_AddPlace.resx">
+      <DependentUpon>201711302120360_AddPlace.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

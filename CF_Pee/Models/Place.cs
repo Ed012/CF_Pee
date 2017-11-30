@@ -6,14 +6,14 @@ using System.Web;
 
 namespace CF_Pee.Models
 {
-    public class Course
+    public class Place
     {
         [Key]
-        public int IdCourse { get; set; }
+        public int IdPlace { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
+        public string Address { get; set; }
 
-        public int IdCycle { get; set; }
-        public Cycle Cycle { get; set; }
+
+
     }
 }
