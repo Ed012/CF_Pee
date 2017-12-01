@@ -13,6 +13,7 @@ namespace CF_Pee.Models
         public string Name { get; set; }
         public string Period { get; set; }
 
+
         public List<Course> Courses { get; set; }
     }
 }
